@@ -1,4 +1,4 @@
-var chrome = require('chromedriver');
+// var chrome = require('chromedriver');
 var webdriver = require('./node_modules/selenium-webdriver');
 
 
