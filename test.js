@@ -2,7 +2,7 @@ require('chromedriver');
 var webdriver = require('selenium-webdriver');
 
 async function searchTextOnGoogle() {
-  driver = new webdriver.Builder().forBrowser(browser)
+  driver = new webdriver.Builder().forBrowser('chrome')
   .setLoggingPrefs(pref)
   .build();
 driver.manage().window().maximize();
