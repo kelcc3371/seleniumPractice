@@ -2,7 +2,9 @@ var chrome = require('./node_modules/chromedriver');
 var webdriver = require('./node_modules/selenium-webdriver');
 
 
-chrome.setDefaultService(new chrome.ServiceBuilder('path/to/chromedriver').build());
+var service = chrome.ServiceBuilder('path/to/chromedriver').build();
+chrome.setDefaultService(service);
+  
   
 async function searchTextOnGoogle() {
   driver = new webdriver.Builder().forBrowser('chrome').build();
