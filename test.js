@@ -1,5 +1,5 @@
-require('chromedriver');
-var webdriver = require('selenium-webdriver');
+require('./node_modules/chromedriver');
+var webdriver = require('./node_modules/selenium-webdriver');
 
 async function searchTextOnGoogle() {
   driver = new webdriver.Builder().forBrowser('chrome').build();
