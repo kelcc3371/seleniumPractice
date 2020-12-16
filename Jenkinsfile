@@ -15,12 +15,11 @@ pipeline {
             }
         }
         stage ('test') {
-            environment {
-                DCB_CREDENTIALS = credentials('dcb-field-supervisor')
-            }
+            withCredentials([usernamePassword(credentialsId: 'test-credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
             steps {
                 sh 'npm run test'
             }
+        }
         }
     }
 }
