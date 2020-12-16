@@ -5,6 +5,8 @@ var util = require('./utilities/generalUtilities')
 var CONSTANTS = require('./utilities/constants')
 var assert = require('assert')
 
+var username = process.env.DCB_USERNAME
+var password = process.env.DCB_PASSWORD
 // import SearchResultsPage from './../src/pageobjects/SearchResultsPage'
 
 // import DriverBuilder from './../src/lib/DriverBuilder'
@@ -20,7 +22,7 @@ var driver;
   })
 
   it('logs in', async function () {
-    await util.login(driver, $DCB_USERNAME , $DCB_PASSWORD);
+    await util.login(driver, username, password);
     await util.log("logging in");
   })
 
