@@ -20,7 +20,7 @@ var driver;
   })
 
   it('logs in', async function () {
-    await util.login(driver, CONSTANTS.UserName, CONSTANTS.Password);
+    await util.login(driver, $DCB_USERNAME , $DCB_PASSWORD);
     await util.log("logging in");
   })
 

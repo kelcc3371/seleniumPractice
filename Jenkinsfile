@@ -7,6 +7,8 @@ pipeline {
     }
     environment {
         CI = 'true'
+        DCB_USERNAME = credentials('DCB_Username')
+        DCB_PASSWORD = credentials('DCB_Password')
     }
     stages {
         stage('build') {
