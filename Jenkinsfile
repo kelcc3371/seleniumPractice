@@ -7,7 +7,6 @@ pipeline {
     }
     environment {
         CI = 'true'
-        DCB_CREDS = credentials('test-credentials')
     }
     stages {
         stage('build') {
