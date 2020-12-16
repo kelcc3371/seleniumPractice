@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
         CI = 'true'
+        DCB_CREDENTIALS = credentials('dcb-field-supervisor')
     }
     stages {
         stage('build') {
@@ -15,9 +16,6 @@ pipeline {
             }
         }
         stage ('test') {
-            environment {
-                DCB_CREDENTIALS = credentials('DCB_CREDENTIALS')
-            }
             steps {
                 sh 'npm run test'
             }
