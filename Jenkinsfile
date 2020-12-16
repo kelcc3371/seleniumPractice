@@ -7,7 +7,6 @@ pipeline {
     }
     environment {
         CI = 'true'
-            withCredentials([usernamePassword(credentialsId: 'test-credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
     }
     stages {
         stage('build') {
@@ -16,10 +15,11 @@ pipeline {
             }
         }
         stage ('test') {
-            steps {
-                sh 'npm run test'
+            withCredentials([usernamePassword(credentialsId: 'test-credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
+                steps {
+                    sh 'npm run test'
+                }
             }
-        }
         }
     }
 }
