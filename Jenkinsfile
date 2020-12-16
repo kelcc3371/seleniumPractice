@@ -7,18 +7,19 @@ pipeline {
     }
     environment {
         CI = 'true'
+        DCB_USERNAME     = credentials('')
     }
     stages {
         stage('build') {
             steps {
                 sh 'npm install'
+                sh 'touch .env'
+                sh "echo DCB_USERNAME=${env.dcb-username}"
             }
         }
         stage ('test') {
-            withCredentials([usernamePassword(credentialsId: 'test-credentials', passwordVariable: 'password', usernameVariable: 'username')]) {
-                steps {
-                    sh 'npm run test'
-                }
+            steps {
+                sh 'npm run test'
             }
         }
     }
