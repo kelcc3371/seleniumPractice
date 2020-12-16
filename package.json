@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node_modules/.bin/mocha assignToNonWork.js --timeout 20000"
+    "test": "node_modules/.bin/mocha assignToNonWorkMocha.js --timeout 20000"
   },
   "author": "",
   "license": "ISC"

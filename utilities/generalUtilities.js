@@ -1,6 +1,5 @@
 require('chromedriver');
 
-const { utils } = require('mocha');
 const CONSTANTS = require("./constants");
 var webdriver = require('selenium-webdriver'),
   By = webdriver.By,
