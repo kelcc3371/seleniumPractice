@@ -13,7 +13,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh "echo ${DCB_CREDS_USR}"
+                sh "echo ${dcb_user}"
             }
         }
         stage ('test') {
