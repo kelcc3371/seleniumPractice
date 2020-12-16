@@ -12,8 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh 'touch .env'
-                sh "echo DCB_USERNAME=${env.dcb-username}"
+                sh "echo DCB_USERNAME=${env.dcb-username} >> creds"
             }
         }
         stage ('test') {
