@@ -12,7 +12,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh "echo DCB_USERNAME=${env.dcb-username} >> creds"
+                sh "echo ${dcb-username}"
             }
         }
         stage ('test') {
