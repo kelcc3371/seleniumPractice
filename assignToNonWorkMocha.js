@@ -16,13 +16,16 @@ var password = process.env.DCB_PASSWORD
 describe('Acceptance Tests', function () {
 var crewInfo;
 var driver;
-  before(async function () {
+  // before(async function () {
+  //   driver = new webdriver.Builder().forBrowser('chrome')
+  //   .build();
+  //   driver.manage().window().maximize();
+  // })
+
+  it('logs in', async function () {
     driver = new webdriver.Builder().forBrowser('chrome')
     .build();
     driver.manage().window().maximize();
-  })
-
-  it('logs in', async function () {
     await util.login(driver, username, password);
     await util.log("logging in");
   })
