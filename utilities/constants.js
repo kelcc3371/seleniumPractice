@@ -1,5 +1,5 @@
 // //---------- General ----------
-exports.Salesforce_URL = 'https://scedison--dmsci.my.salesforce.com/';
+exports.Salesforce_URL = 'https://scedison--sceauto.my.salesforce.com/';
 exports.Username = '';
 exports.Password = '';
 exports.EnableLogging = true;
