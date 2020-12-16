@@ -7,12 +7,13 @@ pipeline {
     }
     environment {
         CI = 'true'
+        DCB_CREDS = credentials('test-credentials')
     }
     stages {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh "echo ${dcb-username}"
+                sh "echo ${DCB_CREDS_USR}"
             }
         }
         stage ('test') {
