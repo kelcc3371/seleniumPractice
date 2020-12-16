@@ -7,8 +7,6 @@ pipeline {
     }
     environment {
         CI = 'true'
-        // DCB_USERNAME = credentials('DCB_Username')
-        // DCB_PASSWORD = credentials('DCB_Password')
     }
     stages {
         stage('build') {
@@ -17,6 +15,9 @@ pipeline {
             }
         }
         stage ('test') {
+            environment {
+                DCB_CREDENTIALS = credentials('DCB_CREDENTIALS')
+            }
             steps {
                 sh 'npm run test'
             }
