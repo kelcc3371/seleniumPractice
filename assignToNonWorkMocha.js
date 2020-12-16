@@ -1,3 +1,4 @@
+require('dotenv').config();
 var webdriver =require('selenium-webdriver'),
   By = webdriver.By,
   until = webdriver.until;
@@ -5,12 +6,12 @@ var util = require('./utilities/generalUtilities')
 var CONSTANTS = require('./utilities/constants')
 var assert = require('assert')
 
-var username = process.env.DCB_CREDENTIALS_USR
-var password = process.env.DCB_CREDENTIALS_PSW
 // import SearchResultsPage from './../src/pageobjects/SearchResultsPage'
 
 // import DriverBuilder from './../src/lib/DriverBuilder'
 // import driverutils from './../src/lib/driver-utils'
+var username = process.env.DCB_USER
+var password = process.env.DCB_PASSWORD
 
 describe('Acceptance Tests', function () {
 var crewInfo;

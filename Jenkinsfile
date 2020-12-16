@@ -13,7 +13,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh "echo ${dcb_user}"
+                sh "echo 'DCB_USERNAME=${dcb_user}' >> .env"
+                sh "echo 'DCB_PASSWORD=${dcb_password} >> .env"
             }
         }
         stage ('test') {
