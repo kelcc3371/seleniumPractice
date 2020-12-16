@@ -1,4 +1,3 @@
-var assignToNonWork = require('./testCases/assignToNonWork')
 var webdriver =require('selenium-webdriver'),
   By = webdriver.By,
   until = webdriver.until;
@@ -26,7 +25,6 @@ var driver;
   })
 
   it('navigates to correct tab', async function () {
-    // await util.navigateToDistrict(driver);
     await driver.wait(until.elementLocated(By.xpath(CONSTANTS.crewPool))).then( async () => {
       let title = await driver.getTitle();
       await driver.sleep(1000);
